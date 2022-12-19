@@ -234,7 +234,8 @@ $("#seed").keyup(e => {setTimeout(() => {
   seed.val(entry);
   if (!entry || !entry.match(/^[0-9+]|[(:)]$/) || IGNORE_KEYCODES.includes(e.which)) return;
   else if (entry >= 4294967296) result = 'Number too large to be processed by Javascript.'
-  else if (entry == 1) result = "1 isn't real.";
+  else if (entry == 0) result = "((-P)):";
+  else if (entry == 1) result = "(-P):";
   else result = xenote(entry);
   $("#number").html(`<h1>${result}</h1>`)
 }, 0)})
